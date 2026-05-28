@@ -149,7 +149,7 @@ export default function App() {
         </div>
       )}
 
-    {screen === "next" && (
+      {screen === "next" && (
   <div className="final-page">
 
     <h1 className="final-text">
@@ -157,19 +157,20 @@ export default function App() {
     </h1>
 
     <div className="collage">
-      <img src={img1} alt="" />
-      <img src={img2} alt="" />
-      <img src={img3} alt="" />
-      <img src={img4} alt="" />
-      <img src={img5} alt="" />
-      <img src={img6} alt="" />
+
+      <div className="cell p1"><img src={img1} /></div>
+      <div className="cell p2"><img src={img2} /></div>
+      <div className="cell p3"><img src={img3} /></div>
+      <div className="cell p4"><img src={img4} /></div>
+      <div className="cell p5"><img src={img5} /></div>
+      <div className="cell p6"><img src={img6} /></div>
+
     </div>
 
     <img src={byeGif} className="bye-gif" />
-
   </div>
 )}
-   
+
     </>
   );
 }
