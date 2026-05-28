@@ -145,6 +145,65 @@ body,
 }
 
 /* ====================================
+   WARNING SCREEN
+==================================== */
+
+.cat-screen {
+  position: fixed;
+  inset: 0;
+
+  background: #000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+
+  text-align: center;
+  color: white;
+
+  padding: 20px;
+
+  z-index: 99999;
+}
+
+.cat-screen img {
+  width: 220px;
+  max-width: 80%;
+
+  border-radius: 20px;
+}
+
+.cat-screen h1 {
+  font-size: 30px;
+  color: white;
+}
+
+.warning-text {
+  font-size: 18px;
+  color: white;
+}
+
+.back-btn {
+  margin-top: 10px;
+
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #ff3b30;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* ====================================
    FULL SCREEN PAGE
 ==================================== */
 
