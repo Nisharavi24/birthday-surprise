@@ -12,17 +12,27 @@ export default function WelcomeScreen({ onAccept }) {
 
   const audioRef = useRef(null);
 
-  // 🔊 ringtone
   useEffect(() => {
-    audioRef.current = new Audio(ringtone);
-    audioRef.current.loop = true;
+  audioRef.current = new Audio(ringtone);
+  audioRef.current.loop = true;
 
-    audioRef.current.play().catch(() => {
-      console.log("Autoplay blocked");
-    });
+  const startRingtone = () => {
+    audioRef.current.play().catch(() => {});
+    
+    document.removeEventListener("click", startRingtone);
+    document.removeEventListener("touchstart", startRingtone);
+  };
 
-    return () => audioRef.current?.pause();
-  }, []);
+  document.addEventListener("click", startRingtone);
+  document.addEventListener("touchstart", startRingtone);
+
+  return () => {
+    audioRef.current?.pause();
+
+    document.removeEventListener("click", startRingtone);
+    document.removeEventListener("touchstart", startRingtone);
+  };
+}, []);
 
   // 🟢 Accept
   const handleAccept = () => {
